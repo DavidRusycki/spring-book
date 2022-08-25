@@ -1,18 +1,17 @@
 package com.springbook.controller;
 
-import java.math.BigInteger;
-import java.sql.Timestamp;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class UserController {
+import com.springbook.dto.HealthDTO;
 
-	@GetMapping("/home")
-	public String getMensagem()
+@RestController
+public class HealthController {
+
+	@GetMapping("/health")
+	public HealthDTO getHealth() 	
 	{
-		return "Spring Boot ist Running"; 	
+		return new HealthDTO();
 	}
 	
 }
