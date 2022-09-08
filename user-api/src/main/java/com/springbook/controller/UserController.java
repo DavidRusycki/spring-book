@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,6 +44,20 @@ public class UserController
 			}
 		}
 		return null;
+	}
+	
+	@DeleteMapping("/user/{cpf}")
+	public Boolean deleteUser(@PathVariable String cpf)
+	{
+		for(UserDTO userFilter: usuarios) 
+		{
+			if (userFilter.getCpf().equals(cpf)) 
+			{
+				usuarios.remove(userFilter);
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	@PostMapping("/newUser")
