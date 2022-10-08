@@ -1,4 +1,4 @@
-package com.springbook.model;
+package com.springbook.entity;
 
 import java.util.Date;
 

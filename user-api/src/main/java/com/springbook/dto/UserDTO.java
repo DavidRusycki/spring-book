@@ -1,8 +1,10 @@
 package com.springbook.dto;
 
 import java.util.Date;
+import com.springbook.entity.User;
 
-public class UserDTO {
+public class UserDTO 
+{
 
 	private String nome;
 	private String cpf;
@@ -11,40 +13,65 @@ public class UserDTO {
 	private String telefone;
 	private Date dataCadastro;
 	
-	public String getNome() {
+	public static UserDTO convert(User user)
+	{
+		UserDTO userDTO = new UserDTO();
+		userDTO.setNome(user.getNome());
+		userDTO.setEndereco(user.getEndereco());
+		userDTO.setCpf(user.getCpf());
+		userDTO.setEmail(user.getEmail());
+		userDTO.setTelefone(user.getTelefone());
+		userDTO.setDataCadastro(user.getDataCadastro());
+		
+		return	userDTO;
+	}
+	
+	public String getNome() 
+	{
 		return nome;
 	}
-	public void setNome(String nome) {
+	public void setNome(String nome) 
+	{
 		this.nome = nome;
 	}
-	public String getCpf() {
+	public String getCpf() 
+	{
 		return cpf;
 	}
-	public void setCpf(String cpf) {
+	public void setCpf(String cpf) 
+	{
 		this.cpf = cpf;
 	}
-	public String getEndereco() {
+	public String getEndereco() 
+	{
 		return endereco;
 	}
-	public void setEndereco(String endereco) {
+	public void setEndereco(String endereco) 
+	{
 		this.endereco = endereco;
 	}
-	public String getEmail() {
+	public String getEmail() 
+	{
 		return email;
 	}
-	public void setEmail(String email) {
+	public void setEmail(String email) 
+	{
 		this.email = email;
 	}
-	public String getTelefone() {
+	public String getTelefone() 
+	{
 		return telefone;
 	}
-	public void setTelefone(String telefone) {
+	public void setTelefone(String telefone) 
+	{
 		this.telefone = telefone;
 	}
-	public Date getDataCadastro() {
+	public Date getDataCadastro() 
+	{
 		return dataCadastro;
 	}
-	public void setDataCadastro(Date dataCadastro) {
+	public void setDataCadastro(Date dataCadastro) 
+	{
 		this.dataCadastro = dataCadastro;
 	}
 	

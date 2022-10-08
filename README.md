@@ -33,3 +33,12 @@ docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres
 ```bash
 docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres
 ```
+
+## Swagger-UI
+
+O projeto também possui a lib do Swagger-ui instalado em cada um dos micro-serviços, ela está acessível pelo link:
+
+```bash
+[endereco-micro-serviço]/swagger-ui/index.html
+```
+
