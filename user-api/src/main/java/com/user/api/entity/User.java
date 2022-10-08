@@ -1,4 +1,4 @@
-package com.springbook.entity;
+package com.user.api.entity;
 
 import java.util.Date;
 
@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.springbook.dto.UserDTO;
+import com.user.api.dto.UserDTO;
 
 @Entity 
 public class User

@@ -1,4 +1,4 @@
-package com.springbook.service;
+package com.user.api.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.stereotype.Service;
 
-import com.springbook.dto.UserDTO;
-import com.springbook.entity.User;
-import com.springbook.repository.UserRepository;
+import com.user.api.dto.UserDTO;
+import com.user.api.entity.User;
+import com.user.api.repository.UserRepository;
 
 @Service 
 public class UserService

@@ -1,4 +1,4 @@
-package com.springbook.dto;
+package com.user.api.dto;
 
 import java.sql.Timestamp;
 import java.util.Date;

@@ -1,7 +1,7 @@
-package com.springbook.dto;
+package com.user.api.dto;
 
 import java.util.Date;
-import com.springbook.entity.User;
+import com.user.api.entity.User;
 
 public class UserDTO 
 {
