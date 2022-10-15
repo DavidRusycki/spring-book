@@ -11,7 +11,6 @@ public class ItemDTO {
 	@NotNull
 	private Float price;
 
-	// get and sets
 	public static ItemDTO convert(Item item) {
 		ItemDTO itemDTO = new ItemDTO();
 		itemDTO.setProductIdentifier(item.getProductIdentifier());

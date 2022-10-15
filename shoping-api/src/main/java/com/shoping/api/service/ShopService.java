@@ -26,7 +26,7 @@ public class ShopService {
 	}
 
 	public List<ShopDTO> getByDate(ShopDTO shopDTO) {
-		List<Shop> shops = shopRepository.findAllByDateGreaterThanEquals(shopDTO.getDate());
+		List<Shop> shops = shopRepository.findAllByDateGreaterThan(shopDTO.getDate());
 		return shops.stream().map(ShopDTO::convert).collect(Collectors.toList());
 	}
 

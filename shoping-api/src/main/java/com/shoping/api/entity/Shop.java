@@ -25,7 +25,6 @@ public class Shop {
 	@CollectionTable(name = "item", joinColumns = @JoinColumn(name = "shop_id"))
 	private List<Item> items;
 
-// gets e sets
 	public static Shop convert(ShopDTO shopDTO) {
 		Shop shop = new Shop();
 		shop.setUserIdentifier(shopDTO.getUserIdentifier());

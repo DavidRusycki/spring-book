@@ -8,7 +8,6 @@ public class Item {
 	private String productIdentifier;
 	private Float price;
 
-// gets and sets
 	public static Item convert(ItemDTO itemDTO) {
 		Item item = new Item();
 		item.setProductIdentifier(itemDTO.getProductIdentifier());
