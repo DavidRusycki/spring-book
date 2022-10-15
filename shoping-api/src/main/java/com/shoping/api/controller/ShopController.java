@@ -16,6 +16,7 @@ import com.shoping.api.service.ShopService;
 
 @RestController
 public class ShopController {
+	
 	@Autowired
 	private ShopService shopService;
 
