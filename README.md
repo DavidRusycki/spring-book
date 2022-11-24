@@ -9,7 +9,9 @@ Aplicação do [Livro](https://www.casadocodigo.com.br/products/livro-backend-ja
 4. [Kubernetes](https://kubernetes.io/pt-br/) (Ainda Não implementado) 
 5. [VueJs](https://vuejs.org/)
 
-A estrutura da aplicação roda em cima de containers docker, abaixo estão os comandos para colocar os containers em funcionamento.
+A estrutura da aplicação roda em cima de containers docker.
+
+> O comando para rodar os containers está abaixo.
 
 *Vou implementar compose único*
 
@@ -34,7 +36,7 @@ O projeto também possui a lib do Swagger-ui instalado em cada um dos micro-serv
 [endereco-micro-serviço]/swagger-ui/index.html
 ```
 
-## Front-End
+## 💻 Front-End
 
 O frot-end da aplicação será desenvolvido com VueJS.
 
@@ -47,7 +49,7 @@ O frot-end da aplicação será desenvolvido com VueJS.
 
 3. Implementar paginação em uma das telas de consulta.
 
-## Back-End 
+## 🖥 Back-End 
 
 Ainda são necessários ajustes no back-end.
 
