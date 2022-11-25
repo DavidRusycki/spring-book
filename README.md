@@ -9,24 +9,20 @@ Aplicação do [Livro](https://www.casadocodigo.com.br/products/livro-backend-ja
 4. [Kubernetes](https://kubernetes.io/pt-br/) (Ainda Não implementado) 
 5. [VueJs](https://vuejs.org/)
 
+## Setup
+
+1. Necessário rodar o comando abaixo para gerar o .jar dos microserviços. Necessário acessar a pasta e ter o maven instalado.
+```bash
+mvn clean package
+```
+
 A estrutura da aplicação roda em cima de containers docker.
 
 > O comando para rodar os containers está abaixo.
 
-*Vou implementar compose único*
-
-## Container Postgres:
-
 ```bash
-docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres
+docker compose up -d
 ```
-
-Container User-API:
-
-Container Product-API:
-
-Container Shoping-API:
-
 
 ## Swagger-UI
 
@@ -45,15 +41,13 @@ O frot-end da aplicação será desenvolvido com VueJS.
     - Produtos
     - Shoping
 
-2. Criar modal para Alteração.
+2. Implementar paginação em uma das telas de consulta.
 
-3. Implementar paginação em uma das telas de consulta.
-
-## 🖥 Back-End 
+## 🖥 Back-End
 
 Ainda são necessários ajustes no back-end.
 
 1. Implementar paginação em uma rotina.
-2. Modificar para rodar todos os containers com apenas um docker compose.
-3. Gerar os builds dos microserviços.
+2. Modificar para rodar todos os containers com apenas um docker compose. [x]
+3. Gerar os builds dos microserviços. [x]
 4. Desenvolver a comunicação do Front com os microserviços.

@@ -1,12 +1,44 @@
 version: '3'
+
 networks:
-  postgres:
+  springbook:
     external: true
-  
+
 services:
   postgres:
-    image: postgres
+    image: postgres:latest
+    container_name: postgres
     ports:
-      - 5435:5432
+      - 5432:5432
     environment:
       - POSTGRES_PASSWORD=postgres
+  user:
+    image: openjdk:11
+    container_name: user
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - 8080:8080
+    volumes:
+      - ./user-api/target/user-api-1.0.jar:/var/home/java/user-api-1.0.jar
+    command: java -jar /var/home/java/user-api-1.0.jar 
+  product:
+    image: openjdk:11
+    container_name: product
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - 8081:8081
+    volumes:
+      - ./product-api/target/product-api-1.0.jar:/var/home/java/product-api-1.0.jar
+    command: java -jar /var/home/java/product-api-1.0.jar
+  shoping:
+    image: openjdk:11
+    container_name: shoping
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - 8082:8082
+    volumes:
+      - ./shoping-api/target/shopping-api-1.0.jar:/var/home/java/shopping-api-1.0.jar
+    command: java -jar /var/home/java/shopping-api-1.0.jar
