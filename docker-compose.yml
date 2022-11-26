@@ -13,32 +13,32 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
   user:
-    image: openjdk:11
+    image: maven:3.8.6-openjdk-11-slim
     container_name: user
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
       - 8080:8080
     volumes:
-      - ./user-api/target/user-api-1.0.jar:/var/home/java/user-api-1.0.jar
-    command: java -jar /var/home/java/user-api-1.0.jar 
+      - ./user-api/:/var/home/java/user-api/
+    command: bash -c " cd /var/home/java/user-api/ && mvn clean package && java -jar /var/home/java/user-api/target/user-api-1.0.jar"
   product:
-    image: openjdk:11
+    image: maven:3.8.6-openjdk-11-slim
     container_name: product
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
       - 8081:8081
     volumes:
-      - ./product-api/target/product-api-1.0.jar:/var/home/java/product-api-1.0.jar
-    command: java -jar /var/home/java/product-api-1.0.jar
+      - ./product-api/:/var/home/java/product-api/
+    command: bash -c " cd /var/home/java/product-api/ && mvn clean package && java -jar /var/home/java/product-api/target/product-api-1.0.jar"
   shoping:
-    image: openjdk:11
+    image: maven:3.8.6-openjdk-11-slim
     container_name: shoping
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
       - 8082:8082
     volumes:
-      - ./shoping-api/target/shopping-api-1.0.jar:/var/home/java/shopping-api-1.0.jar
-    command: java -jar /var/home/java/shopping-api-1.0.jar
+      - ./shoping-api/:/var/home/java/shopping-api/
+    command: bash -c " cd /var/home/java/shopping-api/ && mvn clean package && java -jar /var/home/java/shopping-api/target/shopping-api-1.0.jar"
