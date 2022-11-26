@@ -47,8 +47,8 @@ O frot-end da aplicação será desenvolvido com VueJS.
 
 Ainda são necessários ajustes no back-end.
 
-1. Implementar paginação em uma rotina.
+1. Implementar paginação em uma rotina. [x]
 2. Modificar para rodar todos os containers com apenas um docker compose. [x]
 3. Gerar os builds dos microserviços. [x]
 4. Desenvolver a comunicação do Front com os microserviços. [x]
-5. Desenvolver uma automação para gerar os builds java.
+5. Desenvolver uma automação para gerar os builds java. [x]

@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired; 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.user.api.dto.UserDTO;
@@ -23,9 +25,9 @@ public class UserService
 	 * Retorna todos os usuários
 	 * @return List<UserDTO>
 	 */
-	public List<UserDTO> getAll()
+	public List<UserDTO> getAll(Pageable page)
 	{
-		List<User> usuarios = userRepository.findAll();
+		Page<User> usuarios = userRepository.findAll(page);
 		return usuarios.stream().map(UserDTO::convert).collect(Collectors.toList());
 	}
 	
