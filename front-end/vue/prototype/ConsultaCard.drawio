@@ -1,0 +1,46 @@
+<mxfile host="65bd71144e">
+    <diagram id="rMzfcZU5DQ4tBisfjA0l" name="Page-1">
+        <mxGraphModel dx="1466" dy="2159" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;span style=&quot;font-size: 20px&quot;&gt;&lt;b&gt;Id: 1&lt;br&gt;Cpf: 123&lt;br&gt;Telefone: 123123&lt;br&gt;Endereço: Rua angelo slomp&lt;br&gt;&lt;/b&gt;&lt;/span&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#666666;html=1;whiteSpace=wrap;fillColor=#f5f5f5;verticalAlign=bottom;align=left;spacing=20;spacingBottom=0;fontSize=14;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry y="110" width="320" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="David Rusycki" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.topButton;rSize=5;perimeter=none;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;resizeWidth=1;fontSize=18;align=left;spacing=20;fontColor=#333333;" vertex="1" parent="2">
+                    <mxGeometry width="320" height="50" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;verticalAlign=top;fillColor=#2D9C5E;shape=mxgraph.gcp2.check" vertex="1" parent="2">
+                    <mxGeometry x="280.0023896103896" y="16.36363636363636" width="11.707988980716253" height="9.366391184573002" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.x" vertex="1" parent="2">
+                    <mxGeometry x="240" y="13.80272727272727" width="20" height="16.36363636363636" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Os dados serao campos que poderão alterar os valores&amp;nbsp;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+                    <mxGeometry x="-90" y="370" width="160" height="155" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=none;html=1;" edge="1" parent="1" source="10" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Titulo vai precisar ser difinido na estrutura de json do card" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+                    <mxGeometry x="-90" y="-90" width="120" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" style="edgeStyle=none;html=1;entryX=0.938;entryY=-0.011;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="12" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="As ações precisam ser passadas a URL para o componente saber qual rota irá chamar" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="-180" width="140" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=none;html=1;entryX=-0.014;entryY=0.389;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="14" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Definir também qual o id, que caso tiver valor não poderá ser alterado. Após salvar não poderá alterar o id" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+                    <mxGeometry x="-280" y="82" width="130" height="148" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
