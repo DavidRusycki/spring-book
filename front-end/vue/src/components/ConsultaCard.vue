@@ -12,7 +12,7 @@
           </p>
         
           <button @click="salvar(id)" type="submit" class="card-link">Salvar</button>
-          <button @click="apagar(id)" type="submit" class="card-link">Apagar</button>
+          <button @click="apagar(id), $emit('apagar')" type="submit" class="card-link">Apagar</button>
       </div>
     </div>
   </div>
@@ -25,9 +25,9 @@ export default {
         id: Number,
         json: Object
     },
+    emits: ['apagar'],
     mounted() {
       console.log("montou card");
-      console.log(this.json);
     },
     methods: {
       changeInput(id, nomeProp) {

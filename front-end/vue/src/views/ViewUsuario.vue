@@ -2,15 +2,14 @@
   <div>
     <div class="main-container">
       <h1>Usuários do sistema</h1>
+      <router-link class="link btn btn-success" to="/new/user/">Adicionar</router-link>
       <div class="meuContainer">
-        <ConsultaCardUsuario v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
+        <ConsultaCardUsuario @apagar="apagar(card.id)" v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
       </div>
     </div> 
     <div>
       <div >
-      
         <button @click="onClickMudaPagina(valor)" v-for="(valor, indice) in arrayPaginas" :valor="valor" :id="valor" :key="indice">{{valor}}</button>
-
       </div>
     </div>
   </div>
@@ -35,6 +34,16 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
       ConsultaCard
     },
     methods: {
+      async apagar(id) {
+        let jsonNew = await this.getJsonCards();
+        debugger;
+        for(let indice in jsonNew) {
+          if (jsonNew[indice].id == id) {
+            jsonNew.splice(indice, 1);
+          }
+        }
+        this.jsonCards = jsonNew;
+      },
       async getJsonCards() {
         let jsonUsuario = await fetch('http://localhost:8080/users/'+this.pagina);
         jsonUsuario = await jsonUsuario.json();

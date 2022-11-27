@@ -14,13 +14,13 @@ export default {
       },
       getJsonOriginal() {
         return {
-            "cpf": "string",
-            "dataCadastro": "0",
-            "email": "string",
-            "endereco": "string",
-            "id": 0,
-            "nome": "string",
-            "telefone": "string"
+            "cpf": null,
+            "dataCadastro": null,
+            "email": null,
+            "endereco": null,
+            "id": null,
+            "nome": null,
+            "telefone": null
         }
       },
       getUrlDelete() {

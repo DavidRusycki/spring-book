@@ -3,6 +3,7 @@ import ViewInicial from '../views/ViewInicial.vue'
 import ViewShopping from '../views/ViewShopping.vue'
 import ViewProduto from '../views/ViewProduto.vue'
 import ViewUsuario from '../views/ViewUsuario.vue'
+import ViewAdicionarUsuario from '../views/ViewAdicionarUsuario.vue'
 const routes = [
   {
     path: '/',
@@ -23,6 +24,11 @@ const routes = [
     path: '/user',
     name: 'Usuário',
     component: ViewUsuario
+  },
+  {
+    path: '/new/user',
+    name: 'Adicionar Usuário',
+    component: ViewAdicionarUsuario
   }
 ]
 
