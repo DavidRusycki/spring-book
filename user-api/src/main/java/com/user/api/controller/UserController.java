@@ -33,6 +33,12 @@ public class UserController {
 		return usuarios;
 	}
 
+	@GetMapping("/user/pages")
+	public Integer getNumeroPaginas() {
+		Pageable page = PageRequest.of(0, 5);
+		return userService.getNumberPages(page);
+	}
+	
 	@GetMapping("/user/{id}")
 	UserDTO findById(@PathVariable Long id) 
 	{

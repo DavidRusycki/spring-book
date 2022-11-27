@@ -2,7 +2,9 @@
     <div class="main-container">
      <h1>Usuários do sistema</h1>
     </div>
-    <ConsultaCard v-for="(card, indice) in jsonCards" :json="card" :id="card.cpf" :key="indice"/>
+    <div class="container meuContainer">
+      <ConsultaCard v-for="(card, indice) in jsonCards" :json="card" :id="card.cpf" :key="indice"/>
+    </div>
 </template>
   
 <script>
@@ -36,5 +38,9 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
   
 <style scoped>
   
+.meuContainer {
+  display: flex;
+}
+
 </style>
   

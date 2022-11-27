@@ -32,6 +32,16 @@ public class UserService
 	}
 	
 	/**
+	 * Retorna todos os usuários
+	 * @return List<UserDTO>
+	 */
+	public Integer getNumberPages(Pageable page)
+	{
+		Page<User> usuarios = userRepository.findAll(page);
+		return usuarios.getTotalPages();
+	}
+	
+	/**
 	 * Retorna o usuário com o id
 	 * @param userId
 	 * @return UserDTO

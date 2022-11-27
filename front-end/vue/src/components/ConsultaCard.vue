@@ -1,19 +1,21 @@
 <template>
-  <div>
-    
-    <div class="card card-consulta">
-      <div class="dados-card">
-        <h1 class="titulo-card">{{json.nome}}</h1>
-        <div class="dados-card" >
+    <div class="card meuCard" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{json.nome}}</h5>
+        
+        <p class="card-text">
+          
           <div v-for="(dado, indice) in json" :key="indice">
             <label class="titulo-data-card" for="">{{indice}}</label>
             <input :id="id+indice" type="text" class="input-data-card" :value="dado">
           </div>
-        </div>
+
+        </p>
+
+        <a href="#" class="card-link">Salvar</a>
+        <a href="#" class="card-link">Apagar</a>
       </div>
     </div>
-    
-  </div>
 </template>
 
 <script>
@@ -31,5 +33,9 @@ export default {
 </script>
 
 <style>
+
+.meuCard {
+  margin: 1em;
+}
 
 </style>
