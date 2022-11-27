@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,6 +45,16 @@ public class UserController {
 		return userService.save(userDTO);
 	}
 
+	@PutMapping("/user/update")
+	UserDTO updateUser(@RequestBody UserDTO userDTO) throws Exception 
+	{
+		UserDTO user = userService.findById(userDTO.getId());
+		if (user != null) {
+			return userService.save(userDTO);			
+		}
+		throw new Exception("Esse usuário não existe");
+	}
+	
 	@GetMapping("/user/cpf/{cpf}")
 	UserDTO findByCpf(@PathVariable String cpf) 
 	{

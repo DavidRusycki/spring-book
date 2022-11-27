@@ -6,6 +6,7 @@ import com.user.api.entity.User;
 public class UserDTO 
 {
 
+	private Long id;
 	private String nome;
 	private String cpf;
 	private String endereco;
@@ -16,6 +17,7 @@ public class UserDTO
 	public static UserDTO convert(User user)
 	{
 		UserDTO userDTO = new UserDTO();
+		userDTO.setId(user.getId());
 		userDTO.setNome(user.getNome());
 		userDTO.setEndereco(user.getEndereco());
 		userDTO.setCpf(user.getCpf());
@@ -73,6 +75,14 @@ public class UserDTO
 	public void setDataCadastro(Date dataCadastro) 
 	{
 		this.dataCadastro = dataCadastro;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 }
