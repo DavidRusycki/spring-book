@@ -1,13 +1,16 @@
 <template>
+  <div>
     <div class="main-container">
-     <h1>Usuários do sistema</h1>
-    </div>
-    <div class="container meuContainer">
-      <ConsultaCard v-for="(card, indice) in jsonCards" :json="card" :id="card.cpf" :key="indice"/>
-    </div>
+      <h1>Usuários do sistema</h1>
+      <div class="meuContainer">
+        <ConsultaCardUsuario v-for="(card, indice) in jsonCards" :json="card" :id="card.cpf" :key="indice"/>
+      </div>
+    </div> 
+  </div>
 </template>
   
 <script>
+import ConsultaCardUsuario from '@/components/ConsultaCardUsuario.vue'
 import ConsultaCard from '@/components/ConsultaCard.vue'
 
   export default {
@@ -19,7 +22,8 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
       }
     },
     components: {
-        ConsultaCard
+      ConsultaCardUsuario,
+      ConsultaCard
     },
     methods: {
       async getJsonCards() {

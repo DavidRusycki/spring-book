@@ -6,7 +6,7 @@
             <button>Grid</button>
         </div>
         <div>            
-            <ConsultaCard v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
+            <ConsultaCardUsuario v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
         </div>
     </div>
 
