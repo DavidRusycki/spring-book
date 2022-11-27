@@ -8,6 +8,7 @@ import com.product.api.entity.Product;
 public class ProductDTO 
 {
 	
+	private Long id;
 	@NotBlank
 	private String productIdentifier;
 	@NotBlank
@@ -22,6 +23,7 @@ public class ProductDTO
 	public static ProductDTO convert(Product product) 
 	{
 		ProductDTO productDTO = new ProductDTO();
+		productDTO.setId(product.getId());
 		productDTO.setNome(product.getNome());
 		productDTO.setPreco(product.getPreco());
 		productDTO.setProductIdentifier(product.getProductIdentifier());
@@ -80,6 +82,16 @@ public class ProductDTO
 	public void setCategoryDTO(CategoryDTO category) 
 	{
 		this.category = category;
+	}
+
+	public Long getId() 
+	{
+		return id;
+	}
+
+	public void setId(Long id) 
+	{
+		this.id = id;
 	}
 	
 	

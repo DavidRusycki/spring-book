@@ -41,6 +41,17 @@ public class ProductService
 		return null;
 	}
 
+	public ProductDTO findById(long productId) 
+	{
+		Optional<Product> product = productRepository.findById(productId);
+		if (product.isPresent()) 
+		{
+			return ProductDTO.convert(product.get());
+		}
+		
+		return null;
+	}
+	
 	public ProductDTO save(ProductDTO productDTO)
 	{
 		Product product = productRepository.save(Product.convert(productDTO));

@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import com.shoping.api.entity.Shop;
 
 public class ShopDTO {
+	private Long id;
 	@NotBlank
 	private String userIdentifier;
 	@NotNull
@@ -20,6 +21,7 @@ public class ShopDTO {
 
 	public static ShopDTO convert(Shop shop) {
 		ShopDTO shopDTO = new ShopDTO();
+		shopDTO.setId(shop.getId());
 		shopDTO.setUserIdentifier(shop.getUserIdentifier());
 		shopDTO.setTotal(shop.getTotal());
 		shopDTO.setItems(shop.getItems().stream().map(ItemDTO::convert).collect(Collectors.toList()));
@@ -56,6 +58,14 @@ public class ShopDTO {
 
 	public void setItems(List<ItemDTO> items) {
 		this.items = items;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	
