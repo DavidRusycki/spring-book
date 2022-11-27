@@ -2,11 +2,11 @@
     <div class="main-container">
      <h1>Usuários do sistema</h1>
     </div>
-    <ConsultaPadrao :jsonCards="jsonCards" />
+    <ConsultaCard v-for="(card, indice) in jsonCards" :json="card" :id="card.cpf" :key="indice"/>
 </template>
   
 <script>
-import ConsultaPadrao from '@/components/ConsultaPadrao.vue'
+import ConsultaCard from '@/components/ConsultaCard.vue'
 
   export default {
     name: 'ViewUsuario',
@@ -17,7 +17,7 @@ import ConsultaPadrao from '@/components/ConsultaPadrao.vue'
       }
     },
     components: {
-        ConsultaPadrao
+        ConsultaCard
     },
     methods: {
       async getJsonCards() {

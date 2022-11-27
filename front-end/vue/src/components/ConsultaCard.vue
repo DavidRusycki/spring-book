@@ -1,18 +1,19 @@
 <template>
-  
-  <div class="card-consulta">
-    <div class="dados-card">
-      card
-      <!-- <h1 class="titulo-card">{{json.tittle}}</h1>
-      <div class="dados-card" >
-        <div v-for="(dado, indice) in json.data" :key="indice">
+  <div>
+    
+    <div class="card card-consulta">
+      <div class="dados-card">
+        <h1 class="titulo-card">{{json.nome}}</h1>
+        <div class="dados-card" >
+          <div v-for="(dado, indice) in json" :key="indice">
             <label class="titulo-data-card" for="">{{indice}}</label>
             <input :id="id+indice" type="text" class="input-data-card" :value="dado">
+          </div>
         </div>
-      </div> -->
+      </div>
     </div>
+    
   </div>
-
 </template>
 
 <script>
