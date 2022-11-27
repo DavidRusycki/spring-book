@@ -7,7 +7,7 @@
         </div>
         <div>
             
-            <ConsultaCard/ v-for="(card, indice) in jsonCards" :key="indice">
+            <ConsultaCard v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
             
         </div>
     </div>
@@ -19,11 +19,18 @@ import ConsultaCard from "@/components/ConsultaCard.vue"
 
 export default {
     name: 'ConsultaPadrao',
-    props: {
-        jsonCards: Object
+    data () {
+        return {
+            jsonCards: {},
+            jsonGrid: {}
+        }
     },
     components: {
         ConsultaCard
+    },
+    mounted() {
+        console.log("JSON CARDS:")
+        console.log(this.jsonCards);
     }
 }
 </script>
