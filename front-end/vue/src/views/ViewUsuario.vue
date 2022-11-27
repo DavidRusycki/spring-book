@@ -3,9 +3,16 @@
     <div class="main-container">
       <h1>Usuários do sistema</h1>
       <div class="meuContainer">
-        <ConsultaCardUsuario v-for="(card, indice) in jsonCards" :json="card" :id="card.cpf" :key="indice"/>
+        <ConsultaCardUsuario v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
       </div>
     </div> 
+    <div>
+      <div >
+      
+        <button @click="onClickMudaPagina(valor)" v-for="(valor, indice) in arrayPaginas" :valor="valor" :id="valor" :key="indice">{{valor}}</button>
+
+      </div>
+    </div>
   </div>
 </template>
   
@@ -18,7 +25,9 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
     data() {
       return {
         pagina: 0,
-        jsonCards: {}
+        jsonCards: {},
+        quantidadePaginas: 0,
+        arrayPaginas: {}
       }
     },
     components: {
@@ -27,14 +36,25 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
     },
     methods: {
       async getJsonCards() {
-        let jsonUsuario = await fetch('http://localhost:8080/users/0');
+        let jsonUsuario = await fetch('http://localhost:8080/users/'+this.pagina);
         jsonUsuario = await jsonUsuario.json();
         console.log(jsonUsuario);
         return jsonUsuario;
+      },
+      async onClickMudaPagina(valor) {
+        this.pagina = valor-1;
+        this.jsonCards = await this.getJsonCards();
       }
     },
     async mounted() {
       this.jsonCards = await this.getJsonCards();
+      let quantidadePaginas = await fetch('http://localhost:8080/user/pages');
+      this.quantidadePaginas = await quantidadePaginas.json();
+      let arrayPaginas = {};
+      for (let index = 0; index < this.quantidadePaginas; index++) {
+        arrayPaginas[index+1] = index+1;
+      }
+      this.arrayPaginas = arrayPaginas;
     }
   }
   
