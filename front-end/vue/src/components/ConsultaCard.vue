@@ -7,7 +7,7 @@
           <p class="card-text">
             <div v-for="(dado, indice) in json" :key="indice">
               <label class="titulo-data-card" for="">{{indice+":"}}</label>
-              <input :id="id+indice" type="text" class="input-data-card" :value="dado">
+              <input @change="changeInput(id+indice)" :id="id+indice" type="text" class="input-data-card" :value="dado">
             </div>
           </p>
         
@@ -28,6 +28,11 @@ export default {
     mounted() {
       console.log("montou card");
       console.log(this.json);
+    },
+    methods: {
+      changeInput(id) {
+        
+      }
     }
 }
 </script>
