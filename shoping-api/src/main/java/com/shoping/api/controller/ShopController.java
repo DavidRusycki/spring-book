@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,7 +48,7 @@ public class ShopController {
 	}
 
 	@PutMapping("/shopping/update")
-	ShopDTO updateUser(@RequestBody ShopDTO shopDTO) throws Exception 
+	ShopDTO updateShop(@RequestBody ShopDTO shopDTO) throws Exception 
 	{
 		ShopDTO shop = shopService.findById(shopDTO.getId());
 		if (shop != null) {
@@ -56,6 +57,10 @@ public class ShopController {
 		throw new Exception("Essa venda/compra não existe");
 	}
 	
+	@DeleteMapping("/shopping/{id}")
+	public ShopDTO deleteShop(@PathVariable Long id) {
+		return shopService.delete(id);
+	}
 	
 	@PostMapping("/shopping")
 	public ShopDTO newShop(@Valid @RequestBody ShopDTO shopDTO) {

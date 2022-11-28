@@ -38,6 +38,16 @@ public class ShopService {
 		return null;
 	}
 
+	public ShopDTO delete(Long id) {
+		Optional<Shop> shop = shopRepository.findById(id);
+		if (shop.isPresent()) 
+		{
+			shopRepository.delete(shop.get());
+		}
+		
+		return null;
+	}
+	
 	public ShopDTO save(ShopDTO shopDTO) {
 		shopDTO.setTotal(shopDTO.getItems().stream().map(x -> x.getPrice()).reduce((float) 0, Float::sum));
 		Shop shop = Shop.convert(shopDTO);

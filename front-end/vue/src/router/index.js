@@ -5,6 +5,7 @@ import ViewProduto from '../views/ViewProduto.vue'
 import ViewUsuario from '../views/ViewUsuario.vue'
 import ViewAdicionarUsuario from '../views/ViewAdicionarUsuario.vue'
 import ViewAdicionarProduto from '../views/ViewAdicionarProduto.vue'
+import ViewAdicionarShoping from '../views/ViewAdicionarShoping.vue'
 const routes = [
   {
     path: '/',
@@ -35,6 +36,11 @@ const routes = [
     path: '/new/produto/',
     name: 'Adicionar Produto',
     component: ViewAdicionarProduto
+  },
+  {
+    path: '/new/shoping/',
+    name: 'Adicionar Shoping',
+    component: ViewAdicionarShoping
   }
 ]
 

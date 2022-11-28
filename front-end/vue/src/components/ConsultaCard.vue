@@ -34,6 +34,7 @@ export default {
         console.log("change não implementado");
       },
       salvar(id) {
+        debugger;
         let jsonParaSalvar = {};
         for(let indice in this.getJsonOriginal()) {
           jsonParaSalvar[indice] = document.getElementById(id+'-'+indice).value;
