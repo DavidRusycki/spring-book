@@ -1,0 +1,18 @@
+version: '3'
+
+networks:
+  spring-book:
+    external: false
+
+services:
+  spring-book:
+    container_name: spring-book
+    image: openjdk:11-jdk-oraclelinux8
+    volumes:
+      - ./target/spring-book-1.0.jar:/usr/local/src/spring-book.jar
+    command: "java -jar /usr/local/src/spring-book.jar"
+    ports:
+      - 8080:8080
+    networks:
+      - spring-book
+    
