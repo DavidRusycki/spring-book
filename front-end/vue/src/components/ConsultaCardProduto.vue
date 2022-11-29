@@ -7,7 +7,7 @@ export default {
     methods: {
       changeInput(id, nomeProp) {
         let idnumero = id.split('-')[0];
-        if (nomeProp = 'nome') {
+        if (nomeProp == 'nome') {
             let idtitle = idnumero+'-cardTittle';
             document.getElementById(idtitle).innerHTML = document.getElementById(id).value;
         }

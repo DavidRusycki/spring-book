@@ -5,13 +5,6 @@ export default {
     name: 'ConsultaCardShoping',
     extends: ConsultaCard,
     methods: {
-      changeInput(id, nomeProp) {
-        let idnumero = id.split('-')[0];
-        if (nomeProp = 'nome') {
-            let idtitle = idnumero+'-cardTittle';
-            document.getElementById(idtitle).innerHTML = document.getElementById(id).value;
-        }
-      },
       getJsonOriginal() {
         return {
           "id": null,
