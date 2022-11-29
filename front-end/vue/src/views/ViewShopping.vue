@@ -5,6 +5,9 @@
         <div class="meuContainer">
           <ConsultaCardShoping @apagar="apagar(card.id)" v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
         </div>
+        <div v-if="this.vazio">
+          <p>Não há registros</p>
+        </div>
     </div>
 </template>
   
@@ -17,7 +20,8 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
     name: 'ViewShopping',
     data() {
       return {
-        jsonCards: {}
+        jsonCards: {},
+        vazio: true
       }
     },
     components: {
@@ -37,11 +41,16 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
       async getJsonCards() {  
         let jsonShoping = await fetch('http://localhost:8082/shopping/');
         jsonShoping = await jsonShoping.json();
+        let contador = 0;
         for(let indice in jsonShoping) {
           jsonShoping[indice]['items'] = JSON.stringify(jsonShoping[indice]['items']);
           delete jsonShoping[indice].date;
+          contador++
         }
         console.log(jsonShoping);
+        if (contador > 0) {
+          this.vazio = false;
+        }
         return jsonShoping;
       }
     },
