@@ -7,6 +7,9 @@
         <ConsultaCardUsuario @apagar="apagar(card.id)" v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
       </div>
     </div> 
+    <div v-if="this.vazio">
+          <p>Não há registros</p>
+    </div>
     <div>
       <div >
         <button @click="onClickMudaPagina(valor)" v-for="(valor, indice) in arrayPaginas" :valor="valor" :id="valor" :key="indice">{{valor}}</button>
@@ -26,7 +29,8 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
         pagina: 0,
         jsonCards: {},
         quantidadePaginas: 0,
-        arrayPaginas: {}
+        arrayPaginas: {},
+        vazio: true
       }
     },
     components: {
@@ -47,6 +51,9 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
       async getJsonCards() {
         let jsonUsuario = await fetch('http://localhost:8080/users/'+this.pagina);
         jsonUsuario = await jsonUsuario.json();
+        if (jsonUsuario.length > 0) {
+          this.vazio = false;
+        }
         console.log(jsonUsuario);
         return jsonUsuario;
       },

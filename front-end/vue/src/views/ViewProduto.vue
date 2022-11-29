@@ -5,6 +5,9 @@
         <div class="meuContainer">
           <ConsultaCardProduto @apagar="apagar(card.id)" v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
         </div>
+        <div v-if="this.vazio">
+          <p>Não há registros</p>
+        </div>
     </div>
 </template>
 
@@ -16,7 +19,8 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
     name: 'ViewProduto',
     data() {
       return {
-        jsonCards: {}
+        jsonCards: {},
+        vazio: true
       }
     },
     components: {
@@ -37,9 +41,14 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
         let jsonProduto = await fetch('http://localhost:8081/product/');
         jsonProduto = await jsonProduto.json();
         console.log(jsonProduto);
+        let contador = 0;
         for(let indice in jsonProduto) {
           jsonProduto[indice]['categoryId'] = jsonProduto[indice]['categoryDTO'].id
           delete jsonProduto[indice]['categoryDTO']
+          contador++;
+        }
+        if (contador > 0) {
+          this.vazio = false;
         }
         return jsonProduto;
       }
