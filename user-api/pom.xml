@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springbook</groupId>
-	<artifactId>spring-book</artifactId>
+	<artifactId>user-api</artifactId>
 	<version>1.0</version>
-	<name>spring-book</name>
+	<name>user-api</name>
 	<description>Spring boot docker </description>
 	<properties>
 		<java.version>11</java.version>
@@ -39,9 +39,9 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-		</dependency> 
+		    <groupId>org.flywaydb</groupId>
+		    <artifactId>flyway-core</artifactId>
+		</dependency>
 	 	<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId> 
