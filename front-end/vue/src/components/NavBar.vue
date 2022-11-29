@@ -35,7 +35,7 @@ nav {
 
 .link:hover {
   color: #BC1E05;
-  transition: 100ms;
+  transition: 250ms;
 }
 
 .router-link-active {

@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 #footer{
-  background: linear-gradient(90deg, rgba(73,73,73,1) 0%, rgb(29, 29, 29) 50%) !important;
+  background: linear-gradient(90deg, rgb(83, 83, 83) 0%, rgb(29, 29, 29) 50%) !important;
   width: 100%;
   height: 150px;
   position: absolute;

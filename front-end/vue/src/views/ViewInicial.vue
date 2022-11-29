@@ -13,6 +13,11 @@ export default {
 </script>
 
 <style scoped>
-
+  .main-container {
+    display: flex;
+    justify-content: center;
+    height: 79vh;
+    align-items: center;
+  }
 </style>
   
