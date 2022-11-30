@@ -6,7 +6,7 @@
           <ConsultaCardProduto @apagar="apagar(card.id)" v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
         </div>
         <div v-if="this.vazio">
-          <p>Não há registros</p>
+          <p class="sem-registro">Não há registros</p>
         </div>
     </div>
 </template>
@@ -62,8 +62,42 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
   
 <style scoped>
   
+p{
+  text-align: center;
+}
 .meuContainer {
-  display: flex;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  height: 61vh;
+  margin: 1vh;
+  justify-content: center
+}
+
+@media (max-width: 1580px) {
+  .meuContainer {
+    grid-template-columns: auto auto auto;
+  }
+  
+} 
+
+@media (max-width: 1580px) {
+  /* .meuContainer {
+    grid-template-columns: auto auto auto auto;
+  } */
+  
+} 
+
+@media (max-width: 1180px) {
+  .meuContainer {
+    grid-template-columns: auto auto ;
+  }
+}
+
+@media (max-width: 780px) {
+  .meuContainer {
+    grid-template-columns: auto  ;
+  }
 }
 
 </style>

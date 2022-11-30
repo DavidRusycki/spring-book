@@ -8,7 +8,7 @@
       </div>
     </div> 
     <div v-if="this.vazio">
-          <p>Não há registros</p>
+          <p class="sem-registro">Não há registros</p>
     </div>
     <div>
       <div >
@@ -78,6 +78,10 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
   
 <style scoped>
   
+p{
+  text-align: center;
+}
+
 .botaozainho {
   margin: 0.2em;
 }
