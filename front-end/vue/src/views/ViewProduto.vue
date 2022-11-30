@@ -62,5 +62,9 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
   
 <style scoped>
   
+.meuContainer {
+  display: flex;
+}
+
 </style>
   

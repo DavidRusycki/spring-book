@@ -11,8 +11,8 @@
             </div>
           </p>
         
-          <button @click="salvar(id)" type="submit" class="card-link">Salvar</button>
-          <button @click="apagar(id), $emit('apagar')" type="submit" class="card-link">Apagar</button>
+          <button @click="salvar(id)" type="submit" class="card-link btn btn-success">Salvar</button>
+          <button @click="apagar(id), $emit('apagar')" type="submit" class="btn btn-danger card-link">Apagar</button>
       </div>
     </div>
   </div>
