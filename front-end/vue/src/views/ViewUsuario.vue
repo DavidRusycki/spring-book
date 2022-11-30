@@ -12,7 +12,7 @@
     </div>
     <div>
       <div >
-        <button @click="onClickMudaPagina(valor)" v-for="(valor, indice) in arrayPaginas" :valor="valor" :id="valor" :key="indice">{{valor}}</button>
+        <button class="botaozainho btn btn-warning" @click="onClickMudaPagina(valor)" v-for="(valor, indice) in arrayPaginas" :valor="valor" :id="valor" :key="indice">{{valor}}</button>
       </div>
     </div>
   </div>
@@ -78,6 +78,10 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
   
 <style scoped>
   
+.botaozainho {
+  margin: 0.2em;
+}
+
 .meuContainer {
   display: flex;
 }

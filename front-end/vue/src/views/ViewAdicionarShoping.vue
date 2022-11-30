@@ -12,7 +12,7 @@
                     </td>
                 </tr>
         </table>
-        <button @click="salvar()">Salvar</button>
+        <button class="btn btn-success" @click="salvar()">Salvar</button>
     </div>
 </template>
   
