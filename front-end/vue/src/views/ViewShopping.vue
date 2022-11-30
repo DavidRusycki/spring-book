@@ -4,6 +4,7 @@
      <router-link class="link btn btn-success" to="/new/shoping/">Adicionar</router-link>
      <div v-if="this.vazio">
        <p class="sem-registro">Não há registros</p>
+       <p>¯\_(ツ)_/¯</p>
      </div>
         <div class="meuContainer">
           <ConsultaCardShoping @apagar="apagar(card.id)" v-for="(card, indice) in jsonCards" :json="card" :id="card.id" :key="indice"/>
@@ -65,6 +66,8 @@ import ConsultaCard from '@/components/ConsultaCard.vue'
 
 p{
   text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 .meuContainer {
