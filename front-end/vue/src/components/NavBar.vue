@@ -29,17 +29,17 @@ nav {
   padding: 1rem;
   font-family: 'Pt Sans', 'Helvetica';
   text-decoration: none;
-  color: #ffffff;
+  color: #f0f0f0;
   font-size: 1.5em;
 }
 .link:hover {
-  /* color: #BC1E05; */
   transition: 250ms;
 }
 
 .router-link-active {
   text-decoration: underline;
-  font-size: 1.8rem;
-  /* color: #BC1E05; */
+  font-size: 2rem;
+  text-shadow: 0 0 1px rgb(255, 255, 255);
+
 }
 </style>

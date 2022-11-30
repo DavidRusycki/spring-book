@@ -4,13 +4,12 @@
       <div class="card-body">
         <h5 :id="id+'-'+'cardTittle'" class="card-title">{{json.nome}}</h5>
         
-          <p class="card-text">
+          <span class="card-text">
             <div v-for="(dado, indice) in json" :key="indice">
               <label class="titulo-data-card" for="">{{indice+":"}}</label>
               <input @change="changeInput(id+'-'+indice, indice)" :id="id+'-'+indice" type="text" class="input-data-card" :value="dado">
             </div>
-          </p>
-        
+          </span>
           <button @click="salvar(id)" type="submit" class="card-link btn btn-success">Salvar</button>
           <button @click="apagar(id), $emit('apagar')" type="submit" class="btn btn-danger card-link">Apagar</button>
       </div>
@@ -98,6 +97,18 @@ export default {
 
 .meuCard {
   margin: 1em;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.titulo-data-card {
+  font-weight: bold;
+}
+
+.titulo-data-card::first-letter {
+  text-transform: uppercase;
 }
 
 .input-data-card {

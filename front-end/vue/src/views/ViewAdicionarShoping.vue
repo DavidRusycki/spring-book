@@ -5,7 +5,7 @@
         <table>
                 <tr v-for="(valor, indice) in jsonCampos" :key="indice">
                     <td>
-                        <label :for="indice">{{indice+':'}}</label>
+                        <label class="label-add" :for="indice">{{indice+':'}}</label>
                     </td>
                     <td>
                         <input :id="indice" :type="valor">
@@ -75,6 +75,8 @@
 </script>
   
 <style scoped>
-  
+.label-add::first-letter {
+  text-transform: uppercase;
+}
 </style>
   
