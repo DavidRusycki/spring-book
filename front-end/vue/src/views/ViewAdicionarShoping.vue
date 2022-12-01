@@ -13,6 +13,9 @@
                 </tr>
         </table>
         <button class="btn btn-success" @click="salvar()">Salvar</button>
+        <div class="alert alert-success" role="alert" v-if="this.mensagem" id="mensagem">
+            Shopping adicionado com sucesso!
+        </div>
     </div>
 </template>
   
@@ -22,7 +25,8 @@
     name: 'ViewAdicionarShoping',
     data() {
         return {
-            jsonCampos: {}
+            jsonCampos: {},
+            mensagem: false
         }
     },
     methods: {
@@ -53,6 +57,11 @@
                 ).then(response => response.json())
                 .then(
                     (data) => {
+                        this.mensagem = true;
+                        let time = setTimeout(() => {
+                            this.mensagem = false;
+                            clearTimeout(time);
+                        }, 2000);
                         console.log(data);
                         console.log("Deu certo!");
                     }
@@ -75,6 +84,9 @@
 </script>
   
 <style scoped>
+#mensagem {
+    width: 20em;
+}
 .label-add::first-letter {
   text-transform: uppercase;
 }

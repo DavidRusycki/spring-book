@@ -20,7 +20,7 @@ export default {
 #footer{
   background: linear-gradient(90deg, rgb(83, 83, 83) 0%, rgb(29, 29, 29) 50%) !important;
   width: 100%;
-  height: 150px;
+  height: 70px;
   position: absolute;
   right: 0;
   bottom: 0;

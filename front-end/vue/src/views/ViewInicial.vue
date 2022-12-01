@@ -3,11 +3,11 @@
       <h1>Criadores</h1>
       <div class="photos">
         <div class="perfil">
-          <img src="../image/david.png">
+          <img src="../image/david.png" style="width: 320px; height: 390px">
           <a href="https://github.com/DavidRusycki" title="GitHub David"><img src="../image/icon_git.png" class="icon_git">GitHub David</a>
         </div>
         <div class="perfil">
-          <img src="../image/samuel.png">
+          <img src="../image/samuel.png" style="width: 320px; height: 390px">
           <a href="https://github.com/Samuca23" title="GitHub Samuel"><img src="../image/icon_git.png" class="icon_git">GitHub Samuel</a>
         </div>
       </div>
